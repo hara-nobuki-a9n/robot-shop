@@ -1,7 +1,7 @@
 # Registry and repository for Docker images
 # Default is docker/robotshop/image:latest
 image:
-  repo: robotshop
+  repo: us-central1-docker.pkg.dev/instana-demo-258410/robot-shop
   version: latest
   pullPolicy: IfNotPresent
 
