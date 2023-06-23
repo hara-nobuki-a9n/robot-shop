@@ -103,12 +103,12 @@ app.get('/product/:sku', (req, res) => {
 });
 
 // products in a category
-app.get('/products/:cat', (req, res) => {
+//app.get('/products/:cat', (req, res) => {
+  app.get('/product/:cat', (req, res) => {
     if(mongoConnected) {
         collection.find({ categories: req.params.cat }).sort({ name: 1 }).toArray().then((products) => {
             if(products) {
-                //res.json(products);
-                res.json(producs);
+                res.json(products);
             } else {
                 res.status(404).send('No products for ' + req.params.cat);
             }
