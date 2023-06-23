@@ -107,9 +107,8 @@ app.get('/products/:cat', (req, res) => {
     if(mongoConnected) {
         collection.find({ categories: req.params.cat }).sort({ name: 1 }).toArray().then((products) => {
             if(products) {
-                res.json(products);
-                // add bug 
-                res.status(500).send(e); //
+                //res.json(products);
+                res.json(producs);
             } else {
                 res.status(404).send('No products for ' + req.params.cat);
             }
