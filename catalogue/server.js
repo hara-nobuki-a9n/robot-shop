@@ -87,7 +87,8 @@ app.get('/product/:sku', (req, res) => {
         collection.findOne({sku: req.params.sku}).then((product) => {
             req.log.info('product', product);
             if(product) {
-                res.json(product);
+                //res.json(product);
+                res.status(500).send('Error!');
             } else {
                 res.status(404).send('SKU not found');
             }
